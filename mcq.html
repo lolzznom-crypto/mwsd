@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IR MCQs Practice</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    background: #f4f6f8;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.question {
+    background: #fff;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.options label {
+    display: block;
+    padding: 6px;
+    margin: 4px 0;
+    border-radius: 6px;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    font-size: 14px;
+}
+
+.answer {
+    margin-top: 6px;
+    font-weight: bold;
+    color: green;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>International Relations MCQs</h1>
+<div id="quiz"></div>
+
+<script>
+
+const questions = [
+{q:`1. International Relations as a discipline primarily studies interactions among.`, options:["A) Agricultural systems of rural economies","B) Families and kinship structures within societies","C) States and non-state actors in the global system","D) Local governance institutions within villages"],answer:"C"},
+{q:`2. The multidisciplinary nature of International Relations means that it draws insights from.`, options:["A) Purely philosophical and theological traditions","B) Only military science and strategic studies","C) Political science, economics, history and sociology","D) Agricultural and environmental engineering"],answer:"C"},
+{q:`3. The Treaty of Versailles is most closely associated with the conclusion of.`, options:["A) World War II","B) The Korean War","C) World War I","D) The Cold War"],answer:"C"},
+{q:`4. The failure of the League of Nations is widely considered a contributing factor to.`, options:["A) The Cuban Missile Crisis","B) The Cold War","C) World War II","D) The Vietnam War"],answer:"C"},
+{q:`5. The Cold War rivalry mainly occurred between.`, options:["A) China and Japan","B) France and Italy","C) The United States and the Soviet Union","D) Britain and Germany"],answer:"C"},
+{q:`6. The Non-Aligned Movement emerged primarily during the period of.`, options:["A) Post-Napoleonic diplomacy","B) European colonial expansion","C) Cold War bipolar rivalry","D) Medieval political alliances"],answer:"C"},
+{q:`7. Classical realism emphasizes the central role of.`, options:["A) Power and national interest","B) Environmental sustainability","C) Moral ideals and ethical diplomacy","D) Cultural exchange and identity"],answer:"A"},
+{q:`8. Neo-realism or structural realism was systematically developed by.`, options:["A) Robert Keohane","B) Francis Fukuyama","C) Kenneth Waltz","D) Woodrow Wilson"],answer:"C"},
+{q:`9. Liberal institutionalism argues that international institutions.`, options:["A) Completely eliminate conflicts","B) Facilitate cooperation among states","C) Replace all state authority","D) Control domestic political systems"],answer:"B"},
+{q:`10. Marxist approaches to international relations focus primarily on.`, options:["A) Cultural traditions of civilizations","B) Global economic inequality and class relations","C) Diplomatic etiquette between states","D) Religious identities among societies"],answer:"B"},
+{q:`11. Dependency theory argues that underdevelopment in poorer countries is linked to.`, options:["A) Lack of cultural unity in societies","B) Weak religious institutions","C) Absence of natural resources","D) Structural dependence on developed capitalist economies"],answer:"D"},
+{q:`12. Systems theory in international relations conceptualizes world politics as.`, options:["A) Purely cultural networks","B) Unrelated domestic political units","C) Isolated independent communities","D) An interconnected global system"],answer:"D"},
+{q:`13. Feminist international relations theory highlights.`, options:["A) Environmental security exclusively","B) Economic tariffs between states","C) Technological determinism in warfare","D) Gendered power relations in global politics"],answer:"D"},
+{q:`14. Game theory in international relations is commonly used to analyze.`, options:["A) Linguistic transformations in diplomacy","B) Strategic decision-making among rational actors","C) Historical myths of civilizations","D) Cultural diffusion in societies"],answer:"B"},
+{q:`15. The United Nations officially came into existence in.`, options:["A) 1919","B) 1945","C) 1935","D) 1955"],answer:"B"},
+{q:`16. The main deliberative body where all UN member states are represented is the.`, options:["A) International Court of Justice","B) UN Secretariat","C) United Nations Security Council","D) United Nations General Assembly"],answer:"D"},
+{q:`17. The primary responsibility for maintaining international peace and security lies with the.`, options:["A) Economic and Social Council","B) International Court of Justice","C) United Nations Security Council","D) UN Secretariat"],answer:"C"},
+{q:`18. The International Court of Justice mainly settles.`, options:["A) Trade negotiations between corporations","B) Legal disputes between states","C) Local government disputes","D) Internal administrative conflicts"],answer:"B"},
+{q:`19. The UN Secretary-General heads the.`, options:["A) United Nations Secretariat","B) General Assembly","C) Economic and Social Council","D) Security Council"],answer:"A"},
+{q:`20. UN Peacekeeping operations are designed primarily to.`, options:["A) Replace national governments","B) Conduct global elections","C) Control global trade systems","D) Maintain ceasefires and stabilize conflict zones"],answer:"D"},
+{q:`21. The concept of 'balance of power' is most closely associated with.`, options:["A) Feminism","B) Realism","C) Constructivism","D) Marxism"],answer:"B"},
+{q:`22. Constructivism in IR emphasizes the role of.`, options:["A) Economic class struggle","B) Military power and alliances","C) Biological determinism","D) Ideas, norms and social identities"],answer:"D"},
+{q:`23. The English School of IR is known for its focus on.`, options:["A) International society and shared norms","B) Global capitalism and exploitation","C) Gender inequality in diplomacy","D) Anarchy and self-help"],answer:"A"},
+{q:`24. Robert Keohane is a leading figure in.`, options:["A) Classical realism","B) Postcolonial theory","C) Green theory","D) Liberal institutionalism"],answer:"D"},
+{q:`25. The concept of 'soft power' was introduced by.`, options:["A) Hans Morgenthau","B) Henry Kissinger","C) Samuel Huntington","D) Joseph Nye"],answer:"D"},
+{q:`26. Hedley Bull's 'The Anarchical Society' is a foundational text of.`, options:["A) Poststructuralism","B) Dependency theory","C) Neorealism","D) The English School"],answer:"D"},
+{q:`27. Hans Morgenthau is considered the father of.`, options:["A) Classical realism in IR","B) Democratic peace theory","C) World systems theory","D) Liberal internationalism"],answer:"A"},
+{q:`28. The democratic peace theory argues that.`, options:["A) Democracies are always peaceful","B) Democracies rarely go to war with each other","C) Economic interdependence causes war","D) Authoritarian states never fight wars"],answer:"B"},
+{q:`29. Immanuel Wallerstein is known for developing.`, options:["A) Regime theory","B) World systems theory","C) Securitization theory","D) Structural realism"],answer:"B"},
+{q:`30. The concept of 'hegemonic stability' suggests that.`, options:["A) A dominant power can maintain international order","B) All states must be equal for peace","C) Anarchy always leads to conflict","D) International organizations replace state power"],answer:"A"},
+{q:`31. Alexander Wendt's famous claim is that.`, options:["A) Anarchy is what states make of it","B) Power is the only currency in IR","C) International law is irrelevant","D) Economic factors determine all outcomes"],answer:"A"},
+{q:`32. Postcolonial IR theory primarily critiques.`, options:["A) Nuclear deterrence strategies","B) Free trade agreements","C) International court procedures","D) Eurocentrism and colonial legacies in global politics"],answer:"D"},
+{q:`33. The Copenhagen School is associated with.`, options:["A) Classical realism","B) Democratic peace theory","C) Neoliberal institutionalism","D) Securitization theory"],answer:"D"},
+{q:`34. Barry Buzan contributed significantly to.`, options:["A) Game theoretic models","B) Feminist epistemology","C) Marxist political economy","D) Security studies and regional security complex theory"],answer:"D"},
+{q:`35. The concept of 'complex interdependence' was developed by.`, options:["A) Waltz and Mearsheimer","B) Marx and Engels","C) Bull and Wight","D) Keohane and Nye"],answer:"D"},
+{q:`36. Offensive realism, as articulated by John Mearsheimer, argues that.`, options:["A) States seek only enough power to ensure survival","B) Economic cooperation eliminates security competition","C) International institutions can prevent conflict","D) Great powers always seek to maximize their share of world power"],answer:"D"},
+{q:`37. The 'clash of civilizations' thesis was proposed by.`, options:["A) Samuel Huntington","B) Edward Said","C) Noam Chomsky","D) Francis Fukuyama"],answer:"A"},
+{q:`38. Francis Fukuyama's 'The End of History' argued that.`, options:["A) Liberal democracy represents the final form of government","B) Communism would eventually triumph globally","C) History moves in cycles of war and peace","D) Civilizations would inevitably clash"],answer:"A"},
+{q:`39. Critical theory in IR draws heavily from.`, options:["A) Chicago School economics","B) Classical Greek philosophy alone","C) The Frankfurt School tradition","D) Behavioralist political science"],answer:"C"},
+{q:`40. The 'security dilemma' concept refers to.`, options:["A) The choice between nuclear and conventional weapons","B) Disagreements within alliance structures","C) A state's inability to fund its military","D) Actions by one state to increase security making others feel less secure"],answer:"D"},
+{q:`41. The Treaty of Westphalia (1648) is significant because it established.`, options:["A) The European Union","B) The United Nations organization","C) International criminal law","D) The modern system of sovereign nation-states"],answer:"D"},
+{q:`42. The principle of 'non-intervention' in international law means.`, options:["A) States must never engage in diplomacy","B) Trade between nations is prohibited","C) States should not interfere in the internal affairs of other states","D) International organizations have absolute authority"],answer:"C"},
+{q:`43. The International Criminal Court (ICC) was established by.`, options:["A) The UN Charter of 1945","B) The Geneva Protocol of 1925","C) The Rome Statute of 1998","D) The Hague Convention of 1907"],answer:"C"},
+{q:`44. The concept of 'Responsibility to Protect' (R2P) was adopted by the UN in.`, options:["A) 2005","B) 2015","C) 1948","D) 1991"],answer:"A"},
+{q:`45. Jus cogens in international law refers to.`, options:["A) Trade regulations between nations","B) Optional guidelines for state conduct","C) Peremptory norms from which no derogation is permitted","D) Military alliance protocols"],answer:"C"},
+{q:`46. Hugo Grotius is often called the father of.`, options:["A) Marxist economics","B) Political realism","C) Democratic theory","D) International law"],answer:"D"},
+{q:`47. The principle of 'pacta sunt servanda' means.`, options:["A) Agreements must be kept","B) States are free to break treaties","C) International courts have no authority","D) War is always justified"],answer:"A"},
+{q:`48. The Vienna Convention on Diplomatic Relations was adopted in.`, options:["A) 1961","B) 1919","C) 1989","D) 1945"],answer:"A"},
+{q:`49. State sovereignty fundamentally means.`, options:["A) Unlimited power to invade other nations","B) Supreme authority of a state within its territorial boundaries","C) Control of the global economy","D) Membership in the United Nations"],answer:"B"},
+{q:`50. Customary international law is derived from.`, options:["A) UN General Assembly resolutions only","B) Treaties and nothing else","C) Consistent state practice accepted as legally binding","D) Decisions of national courts alone"],answer:"C"},
+{q:`51. The concept of 'terra nullius' was used historically to justify.`, options:["A) Colonial acquisition of territories deemed unoccupied","B) Maritime boundaries between states","C) Establishment of free trade zones","D) Creation of international organizations"],answer:"A"},
+{q:`52. Extraterritoriality in international law refers to.`, options:["A) Economic sanctions imposed by one state on another","B) The power of the UN over member states","C) A state's right to expand its territory","D) Exemption of diplomats from the jurisdiction of the host state"],answer:"D"},
+{q:`53. The Nuremberg Trials were significant for establishing.`, options:["A) The principle of state sovereignty","B) Free trade agreements in Europe","C) The United Nations charter","D) Individual criminal responsibility under international law"],answer:"D"},
+{q:`54. The Universal Declaration of Human Rights was adopted in.`, options:["A) 1945","B) 1948","C) 1966","D) 1919"],answer:"B"},
+{q:`55. The Geneva Conventions primarily deal with.`, options:["A) Maritime boundary disputes","B) International trade regulations","C) Protection of victims of armed conflict","D) Diplomatic immunity rules"],answer:"C"},
+{q:`56. The World Trade Organization (WTO) was established in.`, options:["A) 1945","B) 2001","C) 1971","D) 1995"],answer:"D"},
+{q:`57. The Bretton Woods Conference of 1944 led to the creation of.`, options:["A) The United Nations and NATO","B) The WTO and ASEAN","C) The ICC and the ICJ","D) The IMF and the World Bank"],answer:"D"},
+{q:`58. The veto power in the UN Security Council is held by.`, options:["A) All fifteen members","B) The Secretary-General alone","C) Ten elected members","D) Five permanent members"],answer:"D"},
+{q:`59. The five permanent members of the UN Security Council are.`, options:["A) USA, UK, France, Germany and Italy","B) USA, UK, France, Russia and China","C) USA, Russia, China, Brazil and India","D) USA, UK, Germany, Japan and India"],answer:"B"},
+{q:`60. The International Monetary Fund primarily works to.`, options:["A) Provide military aid to developing countries","B) Ensure stability of the international monetary system","C) Manage global food distribution","D) Settle legal disputes between nations"],answer:"B"},
+{q:`61. ASEAN stands for.`, options:["A) Alliance of South and East Asian Nations","B) Association of Southeast Asian Nations","C) Asian Security and Economic Alliance Network","D) Association of Southern and Eastern African Nations"],answer:"B"},
+{q:`62. The North Atlantic Treaty Organization (NATO) was founded in.`, options:["A) 1955","B) 1949","C) 1945","D) 1961"],answer:"B"},
+{q:`63. The African Union (AU) replaced the Organisation of African Unity (OAU) in.`, options:["A) 2002","B) 1991","C) 1963","D) 2010"],answer:"A"},
+{q:`64. The European Union traces its origins to the.`, options:["A) Congress of Vienna of 1815","B) Yalta Conference of 1945","C) European Coal and Steel Community of 1951","D) Treaty of Versailles of 1919"],answer:"C"},
+{q:`65. The Non-Proliferation Treaty (NPT) was signed in.`, options:["A) 1945","B) 1979","C) 1996","D) 1968"],answer:"D"},
+{q:`66. The World Health Organization (WHO) is a specialized agency of.`, options:["A) The United Nations","B) The European Union","C) The World Bank Group","D) The G7"],answer:"A"},
+{q:`67. The G20 primarily focuses on.`, options:["A) Military alliance and collective security","B) International economic cooperation and policy coordination","C) Cultural exchange between nations","D) Environmental conservation exclusively"],answer:"B"},
+{q:`68. The Organization of the Petroleum Exporting Countries (OPEC) was founded in.`, options:["A) 1945","B) 1990","C) 1960","D) 1973"],answer:"C"},
+{q:`69. The Shanghai Cooperation Organisation (SCO) primarily focuses on.`, options:["A) African peacekeeping missions","B) Transatlantic military coordination","C) Regional security and economic cooperation in Eurasia","D) Latin American trade integration"],answer:"C"},
+{q:`70. The International Atomic Energy Agency (IAEA) is responsible for.`, options:["A) Adjudicating maritime boundary conflicts","B) Coordinating global refugee resettlement","C) Regulating international trade disputes","D) Promoting safe and peaceful use of nuclear energy"],answer:"D"},
+{q:`71. The concept of 'deterrence' in nuclear strategy means.`, options:["A) Encouraging preemptive strikes against enemies","B) Building alliances without military commitments","C) Preventing attack by threatening devastating retaliation","D) Disarming all nuclear weapons globally"],answer:"C"},
+{q:`72. The Cuban Missile Crisis of 1962 brought the world closest to.`, options:["A) A conventional war in Europe","B) The collapse of the United Nations","C) The dissolution of NATO","D) Nuclear war between the US and the Soviet Union"],answer:"D"},
+{q:`73. The Kellogg-Briand Pact of 1928 attempted to.`, options:["A) Outlaw war as an instrument of national policy","B) Divide colonial territories among European powers","C) Establish the League of Nations","D) Create a military alliance against Germany"],answer:"A"},
+{q:`74. The concept of 'collective security' means.`, options:["A) Only great powers maintain international order","B) An attack on one member is considered an attack on all","C) Economic sanctions replace military action entirely","D) Each state is responsible only for its own defense"],answer:"B"},
+{q:`75. The Rwandan Genocide of 1994 highlighted the failure of.`, options:["A) Nuclear deterrence theory","B) International courts to settle disputes","C) Free trade to promote peace","D) International community to prevent mass atrocities"],answer:"D"},
+{q:`76. The concept of 'mutually assured destruction' (MAD) refers to.`, options:["A) Both sides in a nuclear conflict being completely destroyed","B) Economic competition between rival states","C) Gradual escalation of conventional warfare","D) Environmental destruction from industrial pollution"],answer:"A"},
+{q:`77. The Strategic Arms Limitation Talks (SALT) were between.`, options:["A) The European Union and Russia","B) NATO and the Warsaw Pact collectively","C) The United States and the Soviet Union","D) China and India"],answer:"C"},
+{q:`78. The Comprehensive Nuclear-Test-Ban Treaty (CTBT) was adopted in.`, options:["A) 1968","B) 1945","C) 1996","D) 2010"],answer:"C"},
+{q:`79. Human security as a concept broadens security to include.`, options:["A) Threats to individuals such as poverty, disease and environmental degradation","B) Exclusively cybersecurity concerns","C) National border protection alone","D) Only military threats from other states"],answer:"A"},
+{q:`80. Hybrid warfare involves.`, options:["A) A blend of conventional, irregular and cyber methods","B) Exclusively economic sanctions","C) Only nuclear weapon deployment","D) Traditional battlefield combat alone"],answer:"A"},
+{q:`81. The concept of 'preemptive war' refers to.`, options:["A) Diplomatic negotiations to prevent conflict","B) Striking first when an attack is believed to be imminent","C) Defending against an ongoing invasion","D) Economic warfare through trade restrictions"],answer:"B"},
+{q:`82. The Responsibility to Protect (R2P) can be invoked in cases of.`, options:["A) Genocide, war crimes, ethnic cleansing and crimes against humanity","B) Trade disputes between nations","C) Environmental disagreements","D) Cultural differences among states"],answer:"A"},
+{q:`83. Arms control differs from disarmament in that arms control.`, options:["A) Focuses only on nuclear weapons","B) Is limited to bilateral agreements only","C) Aims to completely abolish all weapons","D) Seeks to regulate rather than eliminate weapons"],answer:"D"},
+{q:`84. The concept of 'asymmetric warfare' refers to.`, options:["A) Naval warfare exclusively","B) Economic competition between developed nations","C) Conflict between parties of significantly unequal military power","D) Equal military engagement between two superpowers"],answer:"C"},
+{q:`85. The Biological Weapons Convention was signed in.`, options:["A) 1945","B) 1993","C) 2001","D) 1972"],answer:"D"},
+{q:`86. The doctrine of 'containment' during the Cold War was primarily associated with.`, options:["A) Woodrow Wilson","B) Mahatma Gandhi","C) George F. Kennan","D) Karl Marx"],answer:"C"},
+{q:`87. The term 'proxy war' refers to.`, options:["A) A war fought entirely by robots","B) A conflict where major powers support opposing sides without direct confrontation","C) A diplomatic dispute resolved through mediation","D) A trade war between economic rivals"],answer:"B"},
+{q:`88. The Chemical Weapons Convention entered into force in.`, options:["A) 1945","B) 1997","C) 1972","D) 2005"],answer:"B"},
+{q:`89. The concept of 'peacekeeping' versus 'peacebuilding' differs in that peacekeeping focuses on.`, options:["A) Creating new states from conflict zones","B) Imposing sanctions on warring parties","C) Maintaining ceasefires while peacebuilding addresses root causes of conflict","D) Eliminating all weapons in a region"],answer:"C"},
+{q:`90. The War on Terror was declared by the United States after.`, options:["A) The Cuban Missile Crisis of 1962","B) The Gulf War of 1991","C) The fall of the Berlin Wall in 1989","D) The September 11, 2001 attacks"],answer:"D"},
+{q:`91. The term 'globalization' broadly refers to.`, options:["A) Increasing interconnectedness of economies, cultures and societies worldwide","B) Exclusive reliance on domestic markets","C) Isolation of states from international affairs","D) A decline in international communication"],answer:"A"},
+{q:`92. Mercantilism as an economic philosophy emphasizes.`, options:["A) Equal distribution of wealth among all nations","B) Free trade and minimal government intervention","C) Elimination of all tariffs and trade barriers","D) Accumulation of national wealth through trade surpluses"],answer:"D"},
+{q:`93. The Washington Consensus refers to.`, options:["A) The founding document of the United Nations","B) A peace agreement ending the Cold War","C) A set of neoliberal economic policy recommendations for developing countries","D) A military treaty between Western powers"],answer:"C"},
+{q:`94. The concept of 'comparative advantage' in trade theory was developed by.`, options:["A) Adam Smith","B) John Maynard Keynes","C) David Ricardo","D) Karl Marx"],answer:"C"},
+{q:`95. Structural Adjustment Programs (SAPs) were associated with.`, options:["A) European Union expansion policies","B) UN peacekeeping operations","C) NATO military interventions","D) The IMF and World Bank requiring economic reforms for loans"],answer:"D"},
+{q:`96. The GATT (General Agreement on Tariffs and Trade) was replaced by.`, options:["A) The World Bank","B) The International Monetary Fund","C) The World Trade Organization","D) The United Nations Conference on Trade and Development"],answer:"C"},
+{q:`97. The concept of 'economic nationalism' advocates for.`, options:["A) Abolishing national currencies","B) Complete free trade with no tariffs","C) Global economic governance by the UN","D) Protecting domestic industries from foreign competition"],answer:"D"},
+{q:`98. The Asian Financial Crisis occurred in.`, options:["A) 2008","B) 1997","C) 2001","D) 1991"],answer:"B"},
+{q:`99. The concept of 'neoliberalism' in international political economy promotes.`, options:["A) State control of all industries","B) Free markets, deregulation and reduced government intervention","C) Military expansion as economic policy","D) Autarky and economic self-sufficiency"],answer:"B"},
+{q:`100. The 'Global South' generally refers to.`, options:["A) Nations with cold climates","B) Developing and less economically developed countries","C) Members of the G7","D) Countries located in the Southern Hemisphere only"],answer:"B"},
+{q:`101. The debt crisis of the 1980s primarily affected.`, options:["A) Only European nations","B) The United States exclusively","C) Developing countries in Latin America and Africa","D) Oil-producing countries alone"],answer:"C"},
+{q:`102. Fair trade movements primarily aim to.`, options:["A) Eliminate all international trade","B) Reduce taxation in developed countries","C) Ensure better trading conditions for producers in developing countries","D) Promote military alliances through economic ties"],answer:"C"},
+{q:`103. Multinational corporations (MNCs) in IR are significant because they.`, options:["A) Operate across borders and influence both economies and politics","B) Only function within a single country","C) Are controlled entirely by the United Nations","D) Have no impact on global politics"],answer:"A"},
+{q:`104. The Doha Development Round of WTO negotiations focused on.`, options:["A) Trade liberalization with emphasis on developing countries' needs","B) Nuclear disarmament","C) Climate change mitigation","D) Military cooperation among member states"],answer:"A"},
+{q:`105. The concept of 'brain drain' refers to.`, options:["A) Loss of natural resources through overexploitation","B) Emigration of skilled professionals from developing to developed countries","C) Decline in educational standards globally","D) Information warfare between states"],answer:"B"},
+{q:`106. The Belt and Road Initiative (BRI) was launched by.`, options:["A) China","B) The European Union","C) India","D) The United States"],answer:"A"},
+{q:`107. The Trans-Pacific Partnership (TPP) was originally championed by.`, options:["A) China under Xi Jinping","B) Russia under Vladimir Putin","C) India under Narendra Modi","D) The United States under the Obama administration"],answer:"D"},
+{q:`108. The concept of 'resource curse' suggests that.`, options:["A) Countries rich in natural resources often experience slower economic growth and governance problems","B) Industrialized nations suffer from resource shortages","C) Only landlocked countries face economic challenges","D) Natural resources always lead to prosperity"],answer:"A"},
+{q:`109. Special Drawing Rights (SDRs) are associated with.`, options:["A) The World Trade Organization","B) The United Nations General Assembly","C) The International Court of Justice","D) The International Monetary Fund"],answer:"D"},
+{q:`110. The BRICS grouping consists of.`, options:["A) Britain, Russia, Italy, Canada and Spain","B) Belgium, Romania, Ireland, Croatia and Sweden","C) Brazil, Russia, India, China and South Africa","D) Bhutan, Rwanda, Indonesia, Chile and Senegal"],answer:"C"},
+{q:`111. Diplomacy in its traditional sense refers to.`, options:["A) Military operations against hostile nations","B) Intelligence gathering by spy agencies","C) The conduct of negotiations and relations between states","D) Economic sanctions imposed by international organizations"],answer:"C"},
+{q:`112. Track II diplomacy involves.`, options:["A) Formal negotiations between heads of state","B) Trade negotiations at the WTO","C) Military intervention by allied forces","D) Unofficial dialogue and problem-solving by non-government actors"],answer:"D"},
+{q:`113. The Monroe Doctrine of 1823 asserted.`, options:["A) Free trade between all nations","B) The establishment of the United Nations","C) European dominance over global affairs","D) American opposition to European colonialism in the Western Hemisphere"],answer:"D"},
+{q:`114. Gunboat diplomacy refers to.`, options:["A) Environmental diplomacy regarding ocean resources","B) Cultural exchange programs between navies","C) Peaceful maritime trade negotiations","D) The use of military threats to influence other nations' policies"],answer:"D"},
+{q:`115. The concept of 'shuttle diplomacy' was popularized by.`, options:["A) Kofi Annan","B) Henry Kissinger","C) Woodrow Wilson","D) Ban Ki-moon"],answer:"B"},
+{q:`116. Public diplomacy primarily aims to.`, options:["A) Impose economic sanctions on rival states","B) Influence foreign public opinion to advance national interests","C) Conduct secret negotiations between governments","D) Train military personnel for overseas deployment"],answer:"B"},
+{q:`117. The Camp David Accords of 1978 were a peace agreement between.`, options:["A) USA and the Soviet Union","B) Egypt and Israel","C) India and Pakistan","D) North and South Korea"],answer:"B"},
+{q:`118. The concept of 'appeasement' in foreign policy is most associated with.`, options:["A) Japanese expansion in Southeast Asia","B) French colonialism in Africa","C) British policy toward Nazi Germany before World War II","D) American containment of the Soviet Union"],answer:"C"},
+{q:`119. Coercive diplomacy involves.`, options:["A) Establishing free trade agreements","B) Providing humanitarian aid unconditionally","C) Friendly cultural exchange between nations","D) The use of threats or limited force to persuade an adversary to change behavior"],answer:"D"},
+{q:`120. The 'two-level game' theory of diplomacy was proposed by.`, options:["A) Robert Putnam","B) Hans Morgenthau","C) Kenneth Waltz","D) Alexander Wendt"],answer:"A"},
+{q:`121. Multilateral diplomacy refers to.`, options:["A) Negotiations involving three or more states or parties","B) Bilateral talks between two nations only","C) Secret negotiations between intelligence agencies","D) Unilateral action by a single powerful state"],answer:"A"},
+{q:`122. The Truman Doctrine of 1947 pledged.`, options:["A) British withdrawal from all colonies","B) American support for countries resisting communism","C) Chinese neutrality in the Cold War","D) Soviet expansion into Western Europe"],answer:"B"},
+{q:`123. The Helsinki Accords of 1975 addressed.`, options:["A) Nuclear disarmament in Asia","B) Security, cooperation and human rights in Europe","C) Trade liberalization in Latin America","D) Decolonization of Africa"],answer:"B"},
+{q:`124. The Oslo Accords were an attempt to resolve.`, options:["A) The Israeli-Palestinian conflict","B) The Korean War","C) The Rwandan civil war","D) The Kashmir dispute"],answer:"A"},
+{q:`125. Economic diplomacy primarily involves.`, options:["A) Abolishing all tariffs unilaterally","B) Using economic tools and relationships to achieve foreign policy goals","C) Isolating nations from the global economy permanently","D) Exclusively military alliances for trade protection"],answer:"B"},
+{q:`126. Climate change in international relations is primarily addressed through.`, options:["A) Multilateral agreements like the Paris Agreement","B) Bilateral military alliances","C) International courts alone","D) Unilateral state action exclusively"],answer:"A"},
+{q:`127. The Paris Agreement on climate change was adopted in.`, options:["A) 2009","B) 2015","C) 2020","D) 1997"],answer:"B"},
+{q:`128. The Kyoto Protocol focused on.`, options:["A) Establishing a global currency","B) Creating a world government","C) Reducing greenhouse gas emissions by industrialized countries","D) Eliminating nuclear weapons globally"],answer:"C"},
+{q:`129. Cyber warfare as a dimension of international security involves.`, options:["A) State-sponsored attacks on digital infrastructure of other nations","B) Academic research on internet technology","C) Social media marketing campaigns","D) Only private sector hacking for profit"],answer:"A"},
+{q:`130. The concept of 'global governance' refers to.`, options:["A) Cooperative frameworks for managing transnational issues without a world government","B) The elimination of all national sovereignty","C) The United States governing the entire world","D) A single world government ruling all nations"],answer:"A"},
+{q:`131. The Sustainable Development Goals (SDGs) were adopted by the UN in.`, options:["A) 2015","B) 2000","C) 2020","D) 2010"],answer:"A"},
+{q:`132. The Millennium Development Goals (MDGs) were predecessor targets adopted in.`, options:["A) 1990","B) 2000","C) 2005","D) 2015"],answer:"B"},
+{q:`133. International migration becomes an IR issue primarily because.`, options:["A) It involves cross-border movement affecting relations between states","B) It has no political implications","C) It is only a domestic policy matter","D) It only affects developing countries"],answer:"A"},
+{q:`134. The concept of 'food security' in international relations refers to.`, options:["A) Military protection of agricultural land","B) Stockpiling food for wartime only","C) Reliable access to sufficient, safe and nutritious food for all people","D) International trade in luxury food items only"],answer:"C"},
+{q:`135. The 'digital divide' in global politics refers to.`, options:["A) Military use of digital weapons","B) Disagreements over internet governance only","C) The gap in access to information and communication technology between countries","D) The gap in access to information and communication technology between countries"],answer:"D"},
+{q:`136. Water scarcity as a source of international conflict is most relevant in.`, options:["A) Countries with access to large oceans","B) Regions sharing transboundary river systems","C) Island nations exclusively","D) Arctic regions only"],answer:"B"},
+{q:`137. The concept of 'environmental security' argues that.`, options:["A) Only military threats matter for national security","B) Environmental degradation can be a fundamental threat to national and human security","C) Economic growth always improves the environment","D) Environmental issues have no relation to security"],answer:"B"},
+{q:`138. International terrorism as a non-traditional security threat is characterized by.`, options:["A) Conventional warfare between two state armies","B) Economic competition between multinational corporations","C) Non-state actors using violence for political aims across borders","D) Peaceful protest movements within a single country"],answer:"C"},
+{q:`139. Pandemic diseases become an IR concern because.`, options:["A) Medical issues are unrelated to politics","B) Only the WHO can treat diseases","C) They spread across borders and require international cooperation to manage","D) They only affect one country at a time"],answer:"C"},
+{q:`140. The refugee crisis in international relations is governed primarily by.`, options:["A) The 1951 Refugee Convention and its 1967 Protocol","B) The Bretton Woods Agreement","C) NATO military protocols","D) The WTO agreements"],answer:"A"},
+{q:`141. Space as a domain of international relations involves.`, options:["A) Purely commercial satellite communication","B) Only astronomical research with no political implications","C) Competition and cooperation in outer space exploration and militarization","D) Exclusive control by one superpower"],answer:"C"},
+{q:`142. The concept of 'failed states' in IR refers to.`, options:["A) States that lose in international trade negotiations","B) States unable to maintain effective governance, security or public services","C) Countries that do not join the United Nations","D) Nations that refuse to hold elections once"],answer:"B"},
+{q:`143. The Arctic region has become geopolitically important due to.`, options:["A) Climate change opening new shipping routes and revealing resources","B) The presence of large population centers","C) Historical military conflicts in the region","D) Its status as a nuclear-weapon-free zone"],answer:"A"},
+{q:`144. Artificial intelligence raises concerns in IR regarding.`, options:["A) Exclusively agricultural automation","B) Increased tourism and cultural exchange","C) Only improvements in healthcare delivery","D) Autonomous weapons, surveillance and shifts in global power dynamics"],answer:"D"},
+{q:`145. The concept of 'weaponization of interdependence' refers to.`, options:["A) International cooperation to eliminate all weapons","B) Military alliances based on mutual economic benefit","C) States exploiting global networks such as finance and technology for coercive purposes","D) Using trade agreements to promote peace exclusively"],answer:"C"},
+{q:`146. The Warsaw Pact was a military alliance led by.`, options:["A) China","B) The Soviet Union","C) The United States","D) France"],answer:"B"},
+{q:`147. The Suez Crisis of 1956 involved conflict over.`, options:["A) Control of the Suez Canal involving Egypt, Britain, France and Israel","B) Nuclear weapons testing in the Pacific","C) Colonial boundaries in Latin America","D) Trade disputes in Southeast Asia"],answer:"A"},
+{q:`148. The Berlin Wall fell in.`, options:["A) 1991","B) 1985","C) 1979","D) 1989"],answer:"D"},
+{q:`149. The Marshall Plan was designed to.`, options:["A) Create the United Nations peacekeeping force","B) Dismantle colonial empires in Africa","C) Establish military bases across Asia","D) Provide economic aid for the reconstruction of Western Europe after World War II"],answer:"D"},
+{q:`150. The Bandung Conference of 1955 was significant for.`, options:["A) Establishing NATO","B) Creating the European Economic Community","C) Promoting solidarity among Asian and African nations against colonialism","D) Signing the Nuclear Non-Proliferation Treaty"],answer:"C"},
+{q:`151. Détente during the Cold War refers to.`, options:["A) The formation of new military alliances","B) An escalation of nuclear arms race","C) A period of easing tensions between the US and the Soviet Union","D) Complete diplomatic isolation between superpowers"],answer:"C"},
+{q:`152. The domino theory suggested that.`, options:["A) If one country fell to communism, neighboring countries would follow","B) Economic crises would cascade across Europe","C) Democracies would inevitably spread worldwide","D) Nuclear weapons would proliferate to all nations"],answer:"A"},
+{q:`153. The Gulf War of 1991 was triggered by.`, options:["A) Saudi Arabia's oil embargo","B) Iran's nuclear weapons program","C) Syria's civil war","D) Iraq's invasion of Kuwait"],answer:"D"},
+{q:`154. The Yalta Conference of 1945 primarily addressed.`, options:["A) The creation of NATO","B) The Korean War strategy","C) The Suez Canal dispute","D) The post-World War II reorganization of Europe"],answer:"D"},
+{q:`155. The concept of 'spheres of influence' refers to.`, options:["A) Equal distribution of power among all states","B) Regions where a great power has dominant political or economic control","C) International organizations controlling specific regions","D) Maritime zones under UN jurisdiction"],answer:"B"},
+{q:`156. The Non-Aligned Movement was co-founded by leaders including.`, options:["A) Nehru, Tito, Nasser, Sukarno and Nkrumah","B) Adenauer, De Gaulle and Macmillan","C) Mao, Kim Il-sung and Ho Chi Minh","D) Churchill, Roosevelt and Stalin"],answer:"A"},
+{q:`157. The partition of India in 1947 is significant in IR because.`, options:["A) It created lasting tensions between India and Pakistan including the Kashmir conflict","B) It led to the creation of the United Nations","C) It resolved all religious conflicts in South Asia","D) It ended British influence in Asia completely"],answer:"A"},
+{q:`158. The Korean War (1950-1953) was primarily a conflict between.`, options:["A) Two factions within South Korea","B) Japan and China over territorial disputes","C) North Korea supported by China and the Soviet Union versus South Korea supported by the US-led UN force","D) The United States and the Soviet Union in direct combat"],answer:"C"},
+{q:`159. The Sino-Soviet split refers to.`, options:["A) A trade agreement between China and Russia","B) A border dispute between India and China","C) The division of Korea into two states","D) The deterioration of relations between China and the Soviet Union in the 1960s"],answer:"D"},
+{q:`160. The Iran-Iraq War lasted from.`, options:["A) 2001 to 2008","B) 1973 to 1979","C) 1980 to 1988","D) 1991 to 1998"],answer:"C"},
+{q:`161. The Falklands War of 1982 was fought between.`, options:["A) India and Pakistan","B) France and Germany","C) The United Kingdom and Argentina","D) The United States and Cuba"],answer:"C"},
+{q:`162. The dissolution of the Soviet Union occurred in.`, options:["A) 1989","B) 1991","C) 1985","D) 1995"],answer:"B"},
+{q:`163. The Arab Spring movements began in.`, options:["A) 2010-2011","B) 2005-2006","C) 2015-2016","D) 2001-2002"],answer:"A"},
+{q:`164. The concept of 'Pax Americana' refers to.`, options:["A) The period of relative global peace under American hegemony after World War II","B) The United Nations peace enforcement mechanism","C) A Roman peace treaty with North Africa","D) An economic agreement among American states"],answer:"A"},
+{q:`165. The Rwandan Genocide occurred in.`, options:["A) 1999","B) 2001","C) 1991","D) 1994"],answer:"D"},
+{q:`166. The concept of 'multipolarity' in international relations means.`, options:["A) The absence of any powerful state","B) Multiple great powers sharing global influence","C) Two superpowers competing for dominance","D) Only one superpower dominating world affairs"],answer:"B"},
+{q:`167. 'Unipolarity' after the Cold War refers to.`, options:["A) Global governance by the United Nations alone","B) The dominance of the United States as the sole superpower","C) A balance of power between the US and China","D) The decline of all great powers equally"],answer:"B"},
+{q:`168. Repatriation in the context of refugees means.`, options:["A) Granting permanent citizenship in the host country","B) Detaining refugees indefinitely","C) Returning refugees to their country of origin","D) Transferring refugees to a third country"],answer:"C"},
+{q:`169. The concept of 'transnational advocacy networks' refers to.`, options:["A) Government spy networks","B) Bilateral military alliances","C) Groups of activists, NGOs and organizations operating across borders for shared causes","D) Multinational corporate boards"],answer:"C"},
+{q:`170. The 'CNN effect' in IR refers to.`, options:["A) Censorship of news by authoritarian regimes","B) The influence of media coverage on foreign policy decisions","C) Economic effects of entertainment industry","D) A decline in international communication"],answer:"B"},
+{q:`171. Humanitarian intervention in international relations means.`, options:["A) International trade assistance to developing countries","B) Providing economic aid without political conditions","C) Use of force by states to prevent or end human rights violations in another state","D) Diplomatic recognition of new governments"],answer:"C"},
+{q:`172. The 'Thucydides Trap' concept suggests that.`, options:["A) War is likely when a rising power threatens to displace an established one","B) Alliances always prevent conflicts between great powers","C) Economic interdependence eliminates all wars","D) Democratic states never experience power transitions"],answer:"A"},
+{q:`173. The concept of 'regime' in IR theory refers to.`, options:["A) Sets of principles, norms, rules and procedures governing a specific issue area","B) A military junta ruling a country","C) A particular government or political system of a state","D) An international organization's bureaucracy"],answer:"A"},
+{q:`174. Functionalism in IR theory suggests that.`, options:["A) Military power is the only basis for cooperation","B) International cooperation in technical areas can spill over into political integration","C) States can never cooperate meaningfully","D) Economic competition drives all international relations"],answer:"B"},
+{q:`175. The concept of 'global commons' refers to.`, options:["A) Land owned by multinational corporations","B) Resources and spaces beyond national jurisdiction shared by all such as oceans and atmosphere","C) Private property shared among neighbors","D) National parks within sovereign states"],answer:"B"},
+{q:`176. Neo-functionalism built upon functionalism by emphasizing.`, options:["A) The role of supranational institutions in driving integration","B) Pure military cooperation between states","C) The irrelevance of international organizations","D) Complete economic autarky"],answer:"A"},
+{q:`177. Epistemic communities in IR refer to.`, options:["A) Cultural exchange student groups","B) Networks of professionals with recognized expertise influencing policy","C) International sporting organizations","D) Military intelligence agencies"],answer:"B"},
+{q:`178. The concept of 'sovereignty as responsibility' reframes sovereignty to mean.`, options:["A) Only powerful states possess true sovereignty","B) Sovereignty is irrelevant in modern international law","C) States have a duty to protect their populations and can lose sovereign protection if they fail","D) States have absolute freedom with no accountability"],answer:"C"},
+{q:`179. The 'rally around the flag' effect in foreign policy refers to.`, options:["A) Increased public support for leaders during international crises","B) International solidarity during natural disasters only","C) Military parades as a show of strength","D) Patriotic education programs in schools"],answer:"A"},
+{q:`180. The concept of 'middle power' in IR refers to.`, options:["A) States that exert moderate influence through multilateral coalitions and niche diplomacy","B) The most powerful states in the international system","C) Only European countries of medium size","D) States with no influence on global affairs"],answer:"A"},
+{q:`181. The concept of 'national interest' in realism is defined primarily as.`, options:["A) Promotion of human rights globally","B) Environmental conservation","C) Power and survival of the state","D) Cultural preservation of traditions"],answer:"C"},
+{q:`182. The Hague Conventions of 1899 and 1907 primarily dealt with.`, options:["A) Laws and customs of war and peaceful dispute resolution","B) Colonial boundary demarcation","C) International trade agreements","D) Maritime commerce regulations"],answer:"A"},
+{q:`183. The concept of 'preventive diplomacy' was promoted by.`, options:["A) Henry Kissinger and Richard Nixon","B) Dag Hammarskjöld and later Boutros Boutros-Ghali","C) Winston Churchill and Franklin Roosevelt","D) Karl Marx and Friedrich Engels"],answer:"B"},
+{q:`184. Neoclassical realism differs from structural realism by incorporating.`, options:["A) Domestic-level variables such as leadership perceptions and state structures","B) Purely economic determinants of foreign policy","C) Only systemic-level factors like anarchy","D) Cultural and religious factors exclusively"],answer:"A"},
+{q:`185. The 'liberal peace' thesis argues that peace is promoted by.`, options:["A) Religious harmony between civilizations","B) Isolation from global affairs","C) Democracy, economic interdependence and international institutions together","D) Military strength alone"],answer:"C"},
+{q:`186. The Montevideo Convention of 1933 defined the criteria for.`, options:["A) Diplomatic immunity standards","B) International trade agreements in the Americas","C) Nuclear disarmament procedures","D) Statehood including permanent population, defined territory, government and capacity for relations"],answer:"D"},
+{q:`187. South-South cooperation refers to.`, options:["A) Military alliances among southern European nations","B) Competition between developing countries for foreign aid","C) Trade exclusively between countries in the Southern Hemisphere","D) Collaboration among developing countries to share knowledge and resources"],answer:"D"},
+{q:`188. The concept of 'smart sanctions' refers to.`, options:["A) Military interventions disguised as sanctions","B) Economic aid packages with strict conditions","C) Comprehensive trade embargoes against nations","D) Targeted sanctions against specific individuals or entities rather than entire countries"],answer:"D"},
+{q:`189. The Tobin Tax is a proposed levy on.`, options:["A) International currency transactions to reduce speculation","B) All imports entering a country","C) Carbon emissions from industrial production","D) Military spending by NATO members"],answer:"A"},
+{q:`190. The concept of 'normative power' associated with the European Union suggests that.`, options:["A) The EU relies mainly on military force","B) The EU influences global politics primarily through promotion of norms and values","C) The EU only focuses on internal economic issues","D) The EU has no international influence"],answer:"B"},
+{q:`191. The Westphalian system of international relations is characterized by.`, options:["A) The dominance of international organizations over states","B) Religious authority determining political boundaries","C) Global governance by a single hegemonic power","D) Sovereign equality of states and non-interference in domestic affairs"],answer:"D"},
+{q:`192. The concept of 'power transition theory' argues that.`, options:["A) Wars only occur between weak states","B) Power always transitions peacefully between great powers","C) Wars are most likely when a rising power approaches parity with the dominant power","D) Economic power has no relation to military conflict"],answer:"C"},
+{q:`193. The term 'multilateralism' in international relations means.`, options:["A) International organizations replacing state sovereignty","B) Two states negotiating a bilateral agreement","C) Coordinating relations among three or more states based on shared principles","D) A single state acting alone in world affairs"],answer:"C"},
+{q:`194. The concept of 'just war' tradition originated from.`, options:["A) Ancient Chinese military philosophy alone","B) Christian theological writings particularly Augustine and Aquinas","C) Hindu religious texts only","D) Modern international humanitarian law exclusively"],answer:"B"},
+{q:`195. Edward Said's 'Orientalism' contributed to IR by.`, options:["A) Critiquing Western representations and power dynamics regarding the East","B) Developing nuclear deterrence theory","C) Promoting free trade between East and West","D) Establishing the United Nations framework"],answer:"A"},
+{q:`196. The 'banana wars' in international trade primarily involved disputes between.`, options:["A) The United States and the European Union over banana import regimes","B) Asian producers and South American importers","C) Central American countries fighting over territory","D) African nations competing for export markets"],answer:"A"},
+{q:`197. The International Law Commission (ILC) is responsible for.`, options:["A) Conducting peacekeeping operations globally","B) The progressive development and codification of international law","C) Electing judges to the International Criminal Court","D) Enforcing trade sanctions against member states"],answer:"B"},
+{q:`198. The concept of 'alliance dilemma' refers to.`, options:["A) The financial cost of maintaining military alliances","B) The tension between being entrapped in an ally's conflict and being abandoned by allies","C) The difficulty of choosing between economic and military allies","D) Disagreements within an alliance over leadership"],answer:"B"},
+{q:`199. Grotian tradition in international relations emphasizes.`, options:["A) Inevitable class conflict between nations","B) The existence of an international society bound by law and morality","C) Pure power politics and self-interest","D) Environmental determinism in global politics"],answer:"B"},
+{q:`200. The concept of 'compellence' differs from deterrence in that compellence.`, options:["A) Seeks to prevent an adversary from taking action","B) Aims to force an adversary to change its current behavior","C) Uses only diplomatic means without any threat","D) Relies exclusively on economic pressure"],answer:"B"}
+];
+
+const container = document.getElementById("quiz");
+
+questions.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "question";
+
+    let html = `<p>${item.q}</p><div class="options">`;
+
+    item.options.forEach(opt => {
+        html += `<label><input type="radio" name="q${index}"> ${opt}</label>`;
+    });
+
+    html += `</div>
+    <button onclick="showAnswer(${index})">Show Answer</button>
+    <div class="answer" id="ans${index}">Correct Answer: ${item.answer}</div>`;
+
+    div.innerHTML = html;
+    container.appendChild(div);
+});
+
+function showAnswer(i) {
+    document.getElementById("ans"+i).style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
